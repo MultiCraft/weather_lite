@@ -45,8 +45,8 @@ end
 -- Rain
 weather.register("rain", {
 	falling_speed = 5,
-	amount = 7,
-	size = 25,
+	amount = 6,
+	size = 20,
 	height = 3,
 	vertical = true,
 	texture = "weather_lite_rain.png"
@@ -181,7 +181,7 @@ if snow_covers then
 			minetest.swap_node(pos, {name = "default:snow"})
 		end
 	})
-	
+
 	minetest.override_item("default:snow", {
 		on_timer = function(pos)
 			if weather and weather.type and weather.type == "snow" then

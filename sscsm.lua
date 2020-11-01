@@ -1,5 +1,4 @@
 local vmultiply, vadd = vector.multiply, vector.add
-local random = math.random
 
 local weather = {
 	type = "none",
