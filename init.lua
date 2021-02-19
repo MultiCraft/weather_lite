@@ -2,7 +2,7 @@ if not minetest.settings:get_bool("enable_weather") then
 	return
 end
 
-local vmultiply, vadd = vector.multiply, vector.add
+local vadd, vmultiply, vround = vector.add, vector.multiply, vector.round
 local random = math.random
 local snow_covers = minetest.settings:get_bool("weather_snow_covers") ~= false
 
@@ -117,7 +117,7 @@ local function process_player(player, current_downfall)
 		return
 	end
 
-	local ppos = vector.round(player:get_pos())
+	local ppos = vround(player:get_pos())
 	ppos.y = ppos.y + 1.5
 	-- Higher than clouds
 	local cloud_height = player:get_clouds().height
