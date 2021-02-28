@@ -174,6 +174,7 @@ if snow_covers then
 	minetest.register_node("weather_lite:snow_cover", {
 		tiles = {"blank.png"},
 		drawtype = "signlike",
+		paramtype = "light",
 		buildable_to = true,
 		groups = {not_in_creative_inventory = 1, dig_immediate = 3},
 		on_construct = function(pos)
