@@ -2,6 +2,9 @@ if not minetest.settings:get_bool("enable_weather") then
 	return
 end
 
+local translator = minetest.get_translator
+local S = translator and translator("weather_lite") or function(s) return s end
+
 local vadd, vmultiply, vround = vector.add, vector.multiply, vector.round
 local random = math.random
 local snow_covers = minetest.settings:get_bool("weather_snow_covers") ~= false
@@ -226,18 +229,18 @@ minetest.register_privilege("weather", {
 
 minetest.register_chatcommand("weather", {
 	params = "<weather>",
-	description = "Set weather type",
+	description = S("Setting the weather type"),
 	privs = {weather = true},
 	func = function(name, param)
 		if param and (weather.registered[param] or param == "none") then
 			weather.set(param)
-			minetest.chat_send_player(name, "Set weather type: " .. param)
+			minetest.chat_send_player(name, S("Set weather type:") .. " " .. param)
 		else
 			local types = "none"
 			for w, _ in pairs(weather.registered) do
 				types = types .. ", " .. w
 			end
-			minetest.chat_send_player(name, "Avalible weather types: " .. types)
+			minetest.chat_send_player(name, S("Avalible weather types:") .. " " .. types)
 		end
 	end
 })
