@@ -12,7 +12,7 @@ Copyright (C) HybridDog (2015)
 
 Copyright (C) theFox6 (2018)
 
-Copyright (C) MultiCraft Development Team (2019-2021)
+Copyright (C) MultiCraft Development Team (2019-2020)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
